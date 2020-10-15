@@ -1,0 +1,29 @@
+<div class="info">
+    <div class="text">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias reprehenderit possimus recusandae, numquam, perferendis
+            nobis assumenda pariatur nulla temporibus doloribus cum ut odio ab laborum vel rem at ipsa aliquid! Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit. Molestias reprehenderit possimus recusandae, numquam, perferendis
+            nobis assumenda pariatur nulla temporibus doloribus cum ut odio ab laborum vel rem at ipsa aliquid!</p>
+
+    </div>
+    <div class="reserve">
+        <button mat-raised-button color="warn" class="btn-reserve">Reserve</button>
+    </div>
+</div>
+
+<div class="dishes">
+    <div class="dishes-filter">
+        <div class="categories-filter">
+            <h3>Categories</h3>
+            <mat-selection-list [multiple]="false">
+                <mat-list-option *ngFor="let category of categoriesList" (click)="this.categoryId = category._id">
+                    {{category.name}}
+                </mat-list-option>
+            </mat-selection-list>
+        </div>
+    </div>
+    <div class="dishes-list">
+        <app-dishes [category]="categoryId" (enviarMensaje)="recibirMensaje($event)"></app-dishes>
+    </div>
+</div>
+

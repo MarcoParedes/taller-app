@@ -1,0 +1,39 @@
+.info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    background-color: #5c7188;
+    color: white;
+    padding: 3rem;
+    border-radius: 5px;
+}
+
+.info .text {
+    text-align: justify;
+}
+
+.info .reserve {
+    padding: 20px;
+    min-width: 230px;
+    display: flex;
+}
+
+.info .reserve .btn-reserve {
+    margin: auto;
+    padding: 0 4rem;
+}
+
+.dishes {
+    display: flex;
+    flex-direction: column;
+}
+
+.dishes-filter {
+    min-width: 180px;
+}
+
+@media screen and (min-width: 768px) {
+    .dishes {
+        flex-direction: row;
+    }
+}

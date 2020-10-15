@@ -1,0 +1,27 @@
+<div class="login">
+    <div class="content">
+        <div class="login-form">
+            <h5 class="title">Welcome to my app</h5>
+            <p> Please log in to enter</p>
+
+            <label class="iniciar-sesion">Log In</label>
+            <!-- <hr class="hr-color"> -->
+            <div class="separate-line">
+                <div class="line line-right"></div>
+                <div class="line line-left"></div>
+            </div>
+
+            <form id="frm">
+                <div class="input input-usuario">
+                    <input type="text" placeholder="User" name="user" [(ngModel)]="email">
+                </div>
+                <div class="input input-password">
+                    <input type="password" placeholder="Password" name="password" [(ngModel)]="password">
+                </div>
+                <a class="btn-login" href="javascript:void(0)" (click)="Login()">
+                    <span>Log In</span>
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<nav class="navbar">
+    <div class="navbar-nav">
+        <div class="menu">
+            <a href="javascript:void(0)" class="logo">{{title}}</a>
+            <ul>
+                <li>
+                    <a href="javascript:void(0)" routerLink="/home">Home</a></li>
+                <li *ngIf="authService.isLoggedIn()">
+                    <a href="javascript:void(0)" routerLink="/reservations">Reservations</a>
+                </li>
+            </ul>
+        </div>
+        <a href="javascript:void(0)" (click)="Login()" *ngIf="!authService.isLoggedIn()">Login</a>
+        <a href="javascript:void(0)" *ngIf="authService.isLoggedIn()" (click)="logout()">Logout</a>
+    </div>
+</nav>

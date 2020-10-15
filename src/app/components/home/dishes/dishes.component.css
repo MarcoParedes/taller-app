@@ -1,0 +1,21 @@
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-list .card-item {
+    padding: 10px;
+    max-width: 100%;
+}
+
+.mat-card-image {
+    height: 195px;
+    object-fit: cover;
+}   
+
+@media screen and (min-width: 768px) {
+    .card-list .card-item {
+        max-width: 300px;
+    }
+}

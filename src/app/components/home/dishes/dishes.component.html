@@ -1,0 +1,22 @@
+
+<div class="card-list">
+    <div class="card-item" *ngFor="let dish of dishesList">
+        <mat-card class="card-example">
+            <img mat-card-image src="/assets/images/{{dish.image}}" [alt]="dish.name">
+            <mat-card-content>
+                <h2>{{dish.name}}</h2>
+                <p>
+                    {{dish.description}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button (click)="enviar(dish)">LIKE</button>
+                <button mat-button>SHARE</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <h3 *ngIf="dishesList?.length <= 0 && !loading">Select a category</h3>
+    <div *ngIf="loading">
+        Loading...
+    </div>
+</div>
