@@ -62,6 +62,7 @@ import { ReservationComponent } from './components/reservation/reservation.compo
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'reservations', component: ReservationsListComponent, canActivate: [AuthGuard] },
+      { path: 'management', loadChildren: () => import('./modules/management/management.module').then(m => m.ManagementModule) },
       { path: '', redirectTo: 'home', pathMatch: 'full' }
     ]),
     BrowserAnimationsModule
