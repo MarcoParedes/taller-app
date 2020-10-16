@@ -43,4 +43,9 @@ export class DishesComponent implements OnInit {
     this.enviarMensaje.emit(dish);
   }
 
+
+  public add(dish: Dish): void { 
+    this.dishesService.addCart(dish);
+  }
+
 }

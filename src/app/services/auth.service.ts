@@ -2,17 +2,20 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Login } from "src/app/models/login";
+import { Router } from "@angular/router";
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private router: Router) { }
 
   public logIn(email: string, password: string): Observable<Login> {
     let body = {email, password};
-    return this.http.post<Login>('http://restaurant-restapi.herokuapp.com/api/v1/auth/login', body);
+    return this.http.post<Login>(environment.baseURL + 'api/v1/auth/login', body);
   }
 
   public setToken(token: string): void {
@@ -29,7 +32,7 @@ export class AuthService {
 
   public logout(): void {
     localStorage.removeItem("token");
-    
+    this.router.navigate(['/home']);
   }
 
 }

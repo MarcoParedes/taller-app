@@ -10,6 +10,9 @@
                 </li>
             </ul>
         </div>
+
+        {{dishesList?.length}}
+
         <a href="javascript:void(0)" (click)="Login()" *ngIf="!authService.isLoggedIn()">Login</a>
         <a href="javascript:void(0)" *ngIf="authService.isLoggedIn()" (click)="logout()">Logout</a>
     </div>

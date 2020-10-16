@@ -1,0 +1,8 @@
+table {
+    width: 100%;
+}
+
+.btn-refresh {
+    float: right;
+    margin-top: -2rem;
+}
